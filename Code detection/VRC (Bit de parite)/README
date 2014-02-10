@@ -1,0 +1,7 @@
+VRC (bit de parité)
+
+    1 erreur détectée a coup sur
+    aucune correction
+    probabilité de détectée 1 erreur : P(1err)+P(3err)+P(5err)+P(7err)
+    taux de rendement de 7/(7+1) = 87.5%
+
