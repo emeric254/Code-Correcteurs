@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+use strict;
+use Physique::LinkUDP;
+use Physique::Noise;
+use Parity;
+
+sub codage {
+   my ($car) = @_;
+
+# ajout d'un zero a droite de la valeur binaire du caractere (decalage a gauche) :
+   $car = ord($car) << 1;
+
+# application de la paritée si ce caractere "impair", on inverse le dernier bit qui devient donc un "1" :
+   $car = $car ^ 1  if Parity::parity($car);
+
+# on retourne le caractere et non pas sa valeur binaire :
+   return chr($car);
+}
+
+
+
+
+my $link = P_open(@ARGV);
+my $nbrEnv = 0;
+my $car = codage('o'); # on ne l'encode qu'une seule fois puisque ce caractere ne change pas
+
+print "\n -> envoi du caractere : ".$car." \n";
+
+while($nbrEnv<100000)
+{
+   P_envoiCar($link,$car);
+   $nbrEnv+=1;
+}
+
+print "\n -> nombre de caracteres envoyes : ".$nbrEnv."\n\n";
+
+P_close($link);
+
