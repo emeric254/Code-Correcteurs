@@ -20,16 +20,16 @@ sub codage {
 
 
 
-
+my $car = 'o';
 my $link = P_open(@ARGV);
 my $nbrEnv = 0;
-my $car = codage('o'); # on ne l'encode qu'une seule fois puisque ce caractere ne change pas
+my $temp = codage($car); # on ne l'encode qu'une seule fois puisque ce caractere ne change pas
 
 print "\n -> envoi du caractere : ".$car." \n";
 
 while($nbrEnv<100000)
 {
-   P_envoiCar($link,$car);
+   P_envoiCar($link,$temp);
    $nbrEnv+=1;
 }
 

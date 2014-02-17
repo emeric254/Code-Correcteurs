@@ -1,10 +1,10 @@
 \documentclass[a4paper,10pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-%\usepackage[francais]{babel}
+\usepackage{color}
 %\usepackage[latin1]{inputenc}
 %\usepackage[T1]{fontenc}
-
+%\usepackage[francais]{babel}
 
 \title{Codes Correcteurs}
 \author{Julie Badets, Corentin Frade, Quentin Rouland, Émeric Tosi}
@@ -15,110 +15,91 @@
 
     \maketitle{}
 
+
+    \begin{abstract}
+        Introduction
+    \end{abstract}
+
+
     \tableofcontents{}
 
+
     \part{Code de détection}
-        \section[VRC]{Bit de parité}
-%            \subsection{}
-%                \subsubsection{}
+        \chapter{VRC : Bit de parité}
+            \section{Introduction}
+            \section{Détails}
+                \subsection{Fonctionnement}
+%                    \paragraph{}
+%                        \subparagraph{}
+                \subsection{Erreur(s) détectée(s)}
+%                    \paragraph{}
+%                        \subparagraph{}
+                \subsection{Probabilité de détection}
+%                    \paragraph{}
+%                        \subparagraph{}
+                \subsection{Rendement}
 %                    \paragraph{}
 %                        \subparagraph{}
 
-        \section[CRC]{Code de redondance cyclique}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{CRC : Code de redondance cyclique}
 
-        \section{Code de répétition}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Code de répétition}
 
-        \section{Hachage}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Hachage}
+
 
     \part{Code de correction}
-        \section[LRC]{contrôle parité croisée}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{LRC :Contrôle parité croisée}
 
-        \section{Hamming}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Hamming}
 
-        \section{Golay}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Golay}
 
-        \section{Goppa}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
-%                        \subparagraph{}
+        \chapter{Goppa}
 
-        \section{Xing}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
-%                        \subparagraph{}
+        \chapter{Xing}
 
-        \section{Reed-Müller}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Reed-Müller}
 
-        \section{Reed-Salomon}
-%            \subsection{}
-%                \subsubsection{}
-%                    \paragraph{}
-%                        \subparagraph{}
+        \chapter{Reed-Salomon}
 
 
-    \part{Exemple}
+    \appendix
+        \part{Exemple(s))}
 
-        \paragraph{}
-            \emph{emphatique}
-            \textbf{gras}
-            \texttt{machine à écrire}
-            \textsl{incliné}
-            \textsc{Petites majuscules}
+            \paragraph{}
+                \emph{emphatique}
+                \textbf{gras}
+                \texttt{machine à écrire}
+                \textsl{incliné}
+                \textsc{Petites majuscules}
 
-        \paragraph{}
-            The foundations of the rigorous study of \emph{analysis}
-            were laid in the nineteenth century, notably by the
-            mathematicians Cauchy and Weierstrass. Central to the
-            study of this subject are the formal definitions of
-            \emph{limits} and \emph{continuity}.
+            \paragraph{}
+                The foundations of the rigorous study of \emph{analysis}
+                were laid in the nineteenth century, notably by the
+                mathematicians Cauchy and Weierstrass. Central to the
+                study of this subject are the formal definitions of
+                \emph{limits} and \emph{continuity}.
 
-        \paragraph{}
-            Let $D$ be a subset of $\bf R$ and let
-            $f \colon D \to \mathbf{R}$ be a real-valued function on
-            $D$. The function $f$ is said to be \emph{continuous} on
-            $D$ if, for all $\epsilon > 0$ and for all $x \in D$,
-            there exists some $\delta > 0$ (which may depend on $x$)
-            such that if $y \in D$ satisfies
-            \[ |y - x| < \delta \]
-            then
-            \[ |f(y) - f(x)| < \epsilon. \]
+            \paragraph{}
+                Let $D$ be a subset of $\bf R$ and let
+                $f \colon D \to \mathbf{R}$ be a real-valued function on
+                $D$. The function $f$ is said to be \emph{continuous} on
+                $D$ if, for all $\epsilon > 0$ and for all $x \in D$,
+                there exists some $\delta > 0$ (which may depend on $x$)
+                such that if $y \in D$ satisfies
+                \[ |y - x| < \delta \]
+                then
+                \[ |f(y) - f(x)| < \epsilon. \]
 
-        \paragraph{}
-            One may readily verify that if $f$ and $g$ are continuous
-            functions on $D$ then the functions $f+g$, $f-g$ and
-            $f.g$ are continuous. If in addition $g$ is everywhere
-            non-zero then $f/g$ is continuous.
+            \paragraph{}
+                One may readily verify that if $f$ and $g$ are continuous
+                functions on $D$ then the functions $f+g$, $f-g$ and
+                $f.g$ are continuous. If in addition $g$ is everywhere
+                non-zero then $f/g$ is continuous.
+
+
+    \listoffigures
+
 
 \end{document}
