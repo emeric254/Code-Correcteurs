@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
+\usepackage{amsmath}
 \usepackage[francais]{babel}
 
 \title{Codes Correcteurs}
@@ -21,11 +22,17 @@
     \renewcommand{\contentsname}{Sommaire}
     \tableofcontents{}
 
-    \input{detection.tex}
+    \input{VRC/VRC.tex}
 
-    \input{correction.tex}
+    \input{LRC/LRC.tex}
 
-    \input{annexes.tex}
+    \input{Repetition/Repetition.tex}
+
+    \input{CRC/CRC.tex}
+
+    \input{Hachage/Hachage.tex}
+
+    \input{Hamming/Hamming.tex}
 
     \listoffigures
 
