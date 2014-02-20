@@ -1,0 +1,31 @@
+
+\chapter{VRC : Bit de parité}
+
+    \section{Introduction}
+
+        \paragraph{}
+le VRC (Vertical Redundancy Check), plus connu sous le nom de bit de parité,
+est simplement le rajout d'un bit en fin de message pour assurer la parité du message.
+Ce dernier bit la valeur nécessaire pour assurer un nombre pair de bit à 1 dans le message final.
+Il est donc à 0 pour un nombre pair de bit à 1 dans le message de départ, ou est à 1.
+        \paragraph{}
+Une seule erreur peut être détectée à coup sur.
+Cependant les erreurs détectées sont celles où un nombre impairs de bit ont changé d'état.
+
+
+    \section{Probabilité de détection}
+
+        \paragraph{}
+Probabilité de détecter une erreur :
+\[  P(D\acute{e}tection) = P(1 erreur) + P(3 erreurs) + P(5 erreurs) + P(7 erreurs) \]
+\[  P(D\acute{e}tection) = {n\choose k}p^k(1-p)^{n-k} + {n\choose k} + {n\choose k} + {n\choose k} \]
+\[  P(D\acute{e}tection) \approx 74\% \text{ avec } P( Erreur ) = 10\% \]
+
+
+    \section{Rendement}
+
+        \paragraph{}
+Le rendement de ce code est très bon :
+\[  Rendement = \frac{\text{Taille du message}}{\text{Taille du message}+1} \]
+Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) le rendement est déjà excellent :
+\[  Rendement = \frac{7}{7+1} = 87.5\% \]
