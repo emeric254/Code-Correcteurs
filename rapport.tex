@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{report}
+\documentclass[a4paper,11pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
 \usepackage{amsmath}
@@ -15,11 +15,23 @@
 
 
     \begin{abstract}
-        Introduction
+        \paragraph{}
+Introduction
+        \paragraph{}
+On considère les erreurs comme indépendantes les unes des autres et que tous les bits ont la même probabilité d'erreur.
+Nous nous intéressons donc aux codes correcteurs d'une façon plutôt théorique.
+En pratique, si on prend par exemple les communications sans fil, des problèmes de parasites se posent et l'indépendance des erreurs est perdue.
+        \paragraph{}
+Pour la suite nous prendrons comme exemple un message qui est un simple caractère encodé en UTF-7.
+Ce message a donc une taille de 7 bits.
+Cela facilite ainsi les calculs et l'implémentation pour les tests.
     \end{abstract}
 
+
     \setcounter{tocdepth}{1}
+
     \renewcommand{\contentsname}{Sommaire}
+
     \tableofcontents{}
 
     \input{Repetition/Repetition.tex}
@@ -33,6 +45,5 @@
     \input{Hamming/Hamming.tex}
 
     \listoffigures
-
 
 \end{document}

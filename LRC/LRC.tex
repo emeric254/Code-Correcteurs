@@ -5,21 +5,25 @@
 
         \paragraph{}
 À partir de plusieurs message encodés grâce au VRC.
-Nous prendrons le cas d'une matrice carrée composée de 7 messages de taille 7 chacun.
+Pour rester cohérent avec notre message d'exemple nous prendrons le cas d'une matrice carrée composée de 7 messages de taille 7 chacun.
 Il sera appliqué horizontalement à la matrice (à chaque message) le bit de parité.
 La matrice passera donc à une taille de 7 sur 8.
 Le dernier message qui sera généré grâce à l'application du bit de parité verticalement sur la matrice.
+
+
+    \section{Fiabilité}
+
         \paragraph{}
-cb erreur peut être corrigée. ?
+%cb erreur peut être corrigée. ?
 
 
     \section{Probabilité de détection}
 
         \paragraph{}
-Probabilité de détecter une erreur :
-%\[  P(D\acute{e}tection) = P(1 erreur) + P(3 erreurs) + P(5 erreurs) + P(7 erreurs) \]
-%\[  P(D\acute{e}tection) = {n\choose k}p^k(1-p)^{n-k} + {n\choose k} + {n\choose k} + {n\choose k} \]
-%\[  P(D\acute{e}tection) \approx 74\% \text{ avec } P( Erreur ) = 10\% \]
+%Probabilité de détecter une erreur :
+%\[  P(\text{Détection}) = P(\text{1 erreur}) \]
+%\[  P(\text{Détection}) = {n\choose k}p^k(1-p)^{n-k} \]
+%\[  P(\text{Détection}) \approx 74\% \text{ avec } P(\text{Erreur}) = 10\% \]
 
 
     \section{Rendement}
@@ -27,5 +31,6 @@ Probabilité de détecter une erreur :
         \paragraph{}
 Le rendement de ce code est bon :
 \[  Rendement = \frac{n*\text{Taille du message}}{(n+1)*(\text{Taille du message}+1)} \]
+        \paragraph{}
 Dans le cas que nous étudions (7 messages de 7 bits):
 \[  Rendement = \frac{7*7}{(7+1)*(7+1)} \approx 76.6\% \]

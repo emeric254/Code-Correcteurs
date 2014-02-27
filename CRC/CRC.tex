@@ -13,10 +13,14 @@ On choisit un polynôme générateur, fixé et donc connu des deux entités qui 
 Grâce à celui ci, l'émetteur peut générer le code de contrôle qui est le reste de la division avec le message à envoyer.
 Le récepteur divise ce qu'il a reçut, retrouve le message et sait si il y a eu un problème.
         \paragraph{}
-Il existe plusieurs variantes du CRC selon le choix du polynôme : CRC 12, CRC 16, CRC CCIT v41, CRC 32, CRC ARPA
+Il existe plusieurs variantes du CRC selon le choix du polynôme : CRC 12, CRC 16, CRC CCIT v41, CRC 32, CRC ARPA.
+
+
+    \section{Fiabilité}
+
         \paragraph{}
-Deux erreurs peuvent être détectées grâce au CRC 16.
-Cependant les erreurs détectées sont celles où un nombre impairs de bit ont changé d'état ou
+Deux erreurs peuvent être détectées à coup sur grâce au CRC 16.
+Les erreurs détectées sont seulement celles où un nombre impairs de bit ont changé d'état ou
 celles qui sont des suites de bit qui ont tous changés (rafales), de taille inférieur au
 degré du polynôme.
 
@@ -24,10 +28,12 @@ degré du polynôme.
     \section{Probabilité de détection}
 
         \paragraph{}
-Probabilité de détecter une erreur :
-%\[  P(D\acute{e}tection) = P(1 erreur) + P(3 erreurs) + P(5 erreurs) + P(7 erreurs) \]
-%\[  + P(9 erreurs) + P(11 erreurs) + P(13 erreurs) + P(15 erreurs) + ...XXX... \]
-\[  P(D\acute{e}tection) =  XX99\% \text{ avec } P( Erreur ) = 10\% \]
+%Probabilité de détecter une erreur :
+%\[  P(\text{Détection}) = P(\text{1 erreur}) \]
+%\[  P(\text{Détection}) = {n\choose k}p^k(1-p)^{n-k} \]
+%\[  P(\text{Détection}) \approx 74\% \text{ avec } P(\text{Erreur}) = 10\% \]
+
+% vers 99% apparement ;)
 
 
     \section{Rendement}
@@ -35,7 +41,9 @@ Probabilité de détecter une erreur :
         \paragraph{}
 Le rendement de ce code est dépendant de la taille du message :
 \[  Rendement = \frac{\text{Taille du message}}{\text{Taille du message} + \text{Degré du polynôme}} \]
-Pour un petit message de 7 bit (un simple caractère encodé en UTF-7 par exemple) avec du CRC 16 cela donne un rendement très médiocre :
+        \paragraph{}
+Pour notre message d'exemple, un message de seulement 7 bit de longueur, un codage avec du CRC 16 donne un rendement très médiocre :
 \[  Rendement = \frac{7}{7 + 16} \approx 30\%  \]
+        \paragraph{}
 Cependant avec un message de taille plus importante comme par exemple un message de 128 bit avec du CRC 16 le rendement devient excellent :
 \[  Rendement = \frac{128}{128 + 16} \approx 89\%  \]
