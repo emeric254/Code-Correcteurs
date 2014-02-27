@@ -5,8 +5,12 @@
 
         \paragraph{}
 À partir de plusieurs message encodés grâce au VRC.
+Nous prendrons le cas d'une matrice carrée composée de 7 messages de taille 7 chacun.
+Il sera appliqué horizontalement à la matrice (à chaque message) le bit de parité.
+La matrice passera donc à une taille de 7 sur 8.
+Le dernier message qui sera généré grâce à l'application du bit de parité verticalement sur la matrice.
         \paragraph{}
-Une seule erreur peut être corriger.
+cb erreur peut être corrigée. ?
 
 
     \section{Probabilité de détection}
@@ -21,7 +25,12 @@ Probabilité de détecter une erreur :
     \section{Rendement}
 
         \paragraph{}
-%Le rendement de ce code est très bon :
-%\[  Rendement = \frac{\text{Taille du message}}{\text{Taille du message}+1} \]
-%Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) le rendement est déjà excellent :
-%\[  Rendement = \frac{7}{7+1} = 87.5\% \]
+Le rendement de ce code est bon :
+\[  Rendement = \frac{n*\text{Taille du message}}{(n+1)*(\text{Taille du message}+1)} \]
+Dans le cas que nous étudions :
+\[  Rendement = \frac{7*7}{(7+1)*(7+1)} \approx 76.6\% \]
+
+
+    \section{Implémentation}
+
+        \paragraph{}

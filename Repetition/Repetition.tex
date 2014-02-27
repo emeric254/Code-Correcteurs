@@ -21,7 +21,14 @@ Probabilité de détecter une erreur :
     \section{Rendement}
 
         \paragraph{}
-Le rendement de ce code est très mauvais :
+Le rendement de ce code est très mauvais, on double au minimum la taille du message :
 \[  Rendement = \text{Taille du message}*\text{Nombre de répétition(s)} \]
 Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) et avec 1 répétition seulement :
-\[  Rendement = 7*2 = 50\% \]
+\[  Rendement = \frac{7}{7*2} = 50\% \]
+Pour le même message mais avec 2 répétitions :
+\[  Rendement = \frac{7}{7*3} \approx 33.3\% \]
+
+
+    \section{Implémentation}
+
+        \paragraph{}
