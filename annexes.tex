@@ -33,3 +33,53 @@
             functions on $D$ then the functions $f+g$, $f-g$ and
             $f.g$ are continuous. If in addition $g$ is everywhere
             non-zero then $f/g$ is continuous.
+
+
+
+    %%configuration de listings
+    \lstset{
+        language=perl,
+        basicstyle=\ttfamily\small, %
+        columns=flexible, %
+        tabsize=2, %
+        extendedchars=true, %
+        showspaces=false, %
+        showstringspaces=false, %
+        numbers=left, %
+        numberstyle=\tiny, %
+        breaklines=true, %
+        breakautoindent=true, %
+        captionpos=b
+    }
+
+%language=Octave -> choose the language of the code
+%basicstyle=\footnotesize -> the size of the fonts used for the code
+%numbers=left -> where to put the line-numbers
+%numberstyle=\footnotesize -> size of the fonts used for the line-numbers
+%stepnumber=2 -> the step between two line-numbers.
+%numbersep=5pt -> how far the line-numbers are from the code
+%backgroundcolor=\color{white} -> sets background color (needs package)
+%showspaces=false -> show spaces adding particular underscores
+%showstringspaces=false -> underline spaces within strings
+%showtabs=false -> show tabs within strings through particular underscores
+%frame=single -> adds a frame around the code
+%tabsize=2 -> sets default tab-size to 2 spaces
+%captionpos=b -> sets the caption-position to bottom
+%breaklines=true -> sets automatic line breaking
+%breakatwhitespace=false -> automatic breaks happen at whitespace
+%morecomment=[l]{//} -> displays comments in italics (language dependent)
+
+
+    \begin{lstlisting}[numbers=left, breaklines=true]
+        my $url = 'http://192.168.0.7:8080/POG/getINDI.jsp?zarefno=a1.';
+        use LWP::Simple;
+        my $content = get $url;
+        die "Couldn't get $url" unless defined $content;
+        print $content;
+        print "\n";
+        print "Length " + length($content)
+    \end{lstlisting}
+
+\lstinputlisting{./VRC/Perl/receptionNoise.pl}
+
+\lstinputlisting{./VRC/Perl/envoiNoise.pl}

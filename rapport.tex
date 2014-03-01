@@ -1,8 +1,12 @@
 \documentclass[a4paper,11pt]{report}
 \usepackage[utf8]{inputenc}
-\usepackage{color}
-\usepackage{amsmath}
+\usepackage{color,amsmath}
 \usepackage[francais]{babel}
+\usepackage{xcolor,listings}
+
+\lstset{language=Perl}
+\lstset{commentstyle=\textit}
+\lstset{frame=shadowbox, rulesepcolor=\color{gray}}
 
 \title{Codes Correcteurs}
 \author{Julie Badets, Corentin Frade, Quentin Rouland, Émeric Tosi}
@@ -12,7 +16,6 @@
 \begin{document}
 
     \maketitle{}
-
 
     \begin{abstract}
         \paragraph{}
@@ -28,13 +31,13 @@ les $n-m$ autres sont les bits de correction : le taux de transmission est de $\
         \paragraph{}
 On considère les erreurs comme indépendantes les unes des autres et que tous les bits ont la même probabilité d'erreur.
 Nous nous intéressons donc aux codes correcteurs d'une façon plutôt théorique.
-En pratique, si on prend un exemple dans les communications sans fil, des problèmes de parasites se posent et l'indépendance des erreurs est compromise.
+En pratique, si on prend un exemple dans les communications sans fil,
+des problèmes de parasites se posent et l'indépendance des erreurs est compromise.
         \paragraph{}
 Pour la suite nous prendrons comme exemple un message qui est un simple caractère encodé en UTF-7.
 Ce message a donc une taille de 7 bits.
 Cela facilite ainsi les calculs et l'implémentation pour les tests.
     \end{abstract}
-
 
     \setcounter{tocdepth}{1}
 
