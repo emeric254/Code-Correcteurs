@@ -5,6 +5,10 @@
 
         \paragraph{}
 On transmet simplement plusieurs fois le même message.
+
+
+    \section{Fiabilité}
+
         \paragraph{}
 Une seule erreur peut être détectée à coup sur.
 
@@ -12,16 +16,18 @@ Une seule erreur peut être détectée à coup sur.
     \section{Probabilité de détection}
 
         \paragraph{}
-Probabilité de détecter une erreur :
-%\[  P(D\acute{e}tection) = P(1 erreur) + P(3 erreurs) + P(5 erreurs) + P(7 erreurs) \]
-%\[  P(D\acute{e}tection) = {n\choose k}p^k(1-p)^{n-k} + {n\choose k} + {n\choose k} + {n\choose k} \]
-%\[  P(D\acute{e}tection) \approx 74\% \text{ avec } P( Erreur ) = 10\% \]
+%Probabilité de détecter une erreur :
+%\[  P(\text{Détection}) = P(\text{1 erreur}) \]
+%\[  P(\text{Détection}) = {n\choose k}p^k(1-p)^{n-k} \]
+%\[  P(\text{Détection}) \approx 74\% \text{ avec } P(\text{Erreur}) = 10\% \]
 
 
     \section{Rendement}
 
         \paragraph{}
-Le rendement de ce code est très mauvais :
-\[  Rendement = \text{Taille du message}*\text{Nombre de répétition(s)} \]
+Le rendement de ce code est très mauvais, on double au minimum la taille du message :
+\[  Rendement = \text{Taille du message}*\text{Nombre de répétitions} \]
 Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) et avec 1 répétition seulement :
-\[  Rendement = 7*2 = 50\% \]
+\[  Rendement = \frac{7}{7*2} = 50\% \]
+Pour le même message mais avec 2 répétitions :
+\[  Rendement = \frac{7}{7*3} \approx 33.3\% \]

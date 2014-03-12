@@ -11,7 +11,7 @@ sub codage {
 # ajout d'un zero a droite de la valeur binaire du caractere (decalage a gauche) :
    $car = ord($car) << 1;
 
-# application de la paritée si ce caractere "impair", on inverse le dernier bit qui devient donc un "1" :
+# application de la paritee si ce caractere "impair", on inverse le dernier bit qui devient donc un "1" :
    $car = $car ^ 1  if Parity::parity($car);
 
 # on retourne le caractere et non pas sa valeur binaire :
@@ -36,4 +36,3 @@ while($nbrEnv<100000)
 print "\n -> nombre de caracteres envoyes : ".$nbrEnv."\n\n";
 
 P_close($link);
-

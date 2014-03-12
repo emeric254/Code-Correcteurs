@@ -5,20 +5,20 @@ use Physique::LinkUDP;
 use Parity;
 
 sub verification {
-	my $car = ord($_[0]);
+    my $car = ord($_[0]);
 
-# retour du resultat du test de la parité de ce caractere :
-	return not Parity::parity($car);	
+# retour du resultat du test de la parite de ce caractere :
+    return not Parity::parity($car);
 }
 
 sub decodage {
-	my $car = ord($_[0]);
+    my $car = ord($_[0]);
 
 # ou retourner le caractere vide si il y a erreur :
-	return '' unless ( verification(chr($car)) );
+    return '' unless ( verification(chr($car)) );
 
-# retourner le decodage du caractere par decalage à droite si la paritée est respectée :
-	return chr( $car >> 1);
+# retourner le decodage du caractere par decalage a droite si la paritee est respectee :
+    return chr( $car >> 1);
 }
 
 
@@ -32,10 +32,10 @@ my $nbrErrD = 0; # nbr d'erreurs detectees
 do{
 my $carRec = P_recoitCar($link);
 
-# on test la paritée de cette reception (on test si la reception est valide) :
-   $nbrErrD+=1 unless (verification($carRec)); # la reception ne respecte pas la parité
+# on test la paritee de cette reception (on test si la reception est valide) :
+   $nbrErrD+=1 unless (verification($carRec)); # la reception ne respecte pas la parite
 
-# on test la validité de ce caractere recu :
+# on test la validite de ce caractere recu :
    $nbrErr+=1 if (decodage($carRec) ne 'o'); # le caractere n'est pas celui attendu
 
    $nbrRec += 1;
@@ -44,7 +44,7 @@ my $carRec = P_recoitCar($link);
 
 print "\n";
 print " -> nombre de receptions : ".$nbrRec."\n";
-print " -> nombre de receptions supposées bonnes : ".($nbrRec-$nbrErrD)."\n";
+print " -> nombre de receptions supposees bonnes : ".($nbrRec-$nbrErrD)."\n";
 print " -> nombre de vrais bons caracteres : ".($nbrRec-$nbrErr)."\n";
 print " -> nombre d'erreurs au total : ".$nbrErr."\n";
 print " -> nombre d'erreurs detectees : ".$nbrErrD."\n";
