@@ -10,35 +10,32 @@ package CRC;
 #%* Paramètre : la valeur numérique
 #%* Valeur de retour :
 #%** message et son checksum concatener
-#%* Exemples :
-#%** ++my $par = CRC::CRC($x);++
-#%** ++my $par = CRC::CRC(ord("A"));++
 #%
 
 sub codage {
     @_ == 1 or die;
     my ($code) = @_;
+    my ($check) =  Digest::CRC::crc16($code);
 
-    my ($crc) =  Digest::CRC::crc16($code);
-    return $crc;
+    $code = unpack "B8", $code;
+    $code = $code . unpack "B16", $check;
+
+    return pack "B24", $code;
 }
 
 
 sub verification {
-    my $temp = $_[0];
-    return (Digest::CRC::crc16($temp)==0);
+    print "retour de ".$_[0]." > ".Digest::CRC::crc16($_[0])."\n";
+    return (Digest::CRC::crc16($_[0]) eq 0);
 }
 
 
 sub decodage {
     @_ == 1 or die;
-    my ($code) = @_;
-    print $code."\n";
-# decalage a droite du degré du polynome
-   $code = pack "B8", $code;
-   print $code."\n";
+    my ($code) = unpack "B24",$_[0];
+    $code = pack "B8", $code; # récupération que de la partie utile du message
+#    print "decoder : ".$code."\n";
     return $code;
-
 }
 
 1;

@@ -19,8 +19,6 @@
 
     \begin{abstract}
         \paragraph{}
-Introduction
-        \paragraph{}
 Un code correcteur d'erreur est utilisé pour transmettre un message dans un canal bruité ;
 il permet de reconstituer le message émis même si des erreurs (en nombre limité), dues au bruit, ont altéré le message.
 L'alphabet source, comme l'alphabet du code, est $\{0,1\}$ .
@@ -29,7 +27,7 @@ Le codage est donc une application de $\{0,1\}^m$  vers $\{0,1\}^n$.
 Parmi les $n$ bits du mot-code que nous allons décrire, $m$ reproduisent le mot-source,
 les $n-m$ autres sont les bits de correction : le taux de transmission est de $\frac{n}{m}$.
         \paragraph{}
-On considère les erreurs comme indépendantes les unes des autres et que tous les bits ont la même probabilité d'erreur.
+On considère les erreurs comme indépendantes les unes des autres et tous les bits ont la même probabilité d'erreur.
 Nous nous intéressons donc aux codes correcteurs d'une façon plutôt théorique.
 En pratique, si on prend un exemple dans les communications sans fil,
 des problèmes de parasites se posent et l'indépendance des erreurs est compromise.

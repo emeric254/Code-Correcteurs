@@ -50,3 +50,35 @@ Le rendement de ce code est très bon :
         \paragraph{}
 Pour notre message d'exemple (un simple caractère encodé en UTF-7) le rendement est déjà excellent :
 \[  Rendement = \frac{7}{7+1} = 87.5\% \]
+
+
+    \section{Exemple pratique}
+           \lstset{
+            language=bash, basicstyle=\ttfamily\small, columns=flexible,
+            tabsize=2, extendedchars=true, showspaces=false,
+            showstringspaces=false, numbers=left, numberstyle=\tiny,
+            breaklines=true, breakautoindent=true, captionpos=b
+            }
+
+    \begin{lstlisting}
+>> perl envoiNoise.pl 8001 127.0.0.1:9000
+
+ -> envoi du caractere : o
+
+ -> nombre de caracteres envoyes : 100000
+
+    \end{lstlisting}
+
+    \begin{lstlisting}
+>> perl receptionNoise.pl 9000 127.0.0.1:8001
+
+ -> nombre de receptions : 100000
+ -> nombre de receptions supposees bonnes : 58311
+ -> nombre de vrais bons caracteres : 43079
+ -> nombre d'erreurs au total : 56921
+ -> nombre d'erreurs detectees : 41689
+ -> nombre d'erreurs non detectees : 15232
+ -> fiabilitee de l'envoi/reception : 43.079%
+ -> fiabilitee de detection d'erreur : 73.2401047065231%
+
+    \end{lstlisting}
