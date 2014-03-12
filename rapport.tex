@@ -15,9 +15,9 @@
 
 \begin{document}
 
-    \maketitle{}
+    \maketitle{} % Afficher la page de garde : Titre + Auteur(s) + Date de dernière compilation
 
-    \begin{abstract}
+    \begin{abstract} % Introduction // Résumé
         \paragraph{}
 Un code correcteur d'erreur est utilisé pour transmettre un message dans un canal bruité ;
 il permet de reconstituer le message émis même si des erreurs (en nombre limité), dues au bruit, ont altéré le message.
@@ -37,24 +37,20 @@ Ce message a donc une taille de 7 bits.
 Cela facilite ainsi les calculs et l'implémentation pour les tests.
     \end{abstract}
 
-    \setcounter{tocdepth}{1}
+    \setcounter{tocdepth}{1} % définir la profondeur de l'Index
+    \renewcommand{\contentsname}{Sommaire} % renommer l'Index en Sommaire
+    \tableofcontents{} % afficher l'Index
 
-    \renewcommand{\contentsname}{Sommaire}
-
-    \tableofcontents{}
+% Differentes Parties / Chapitres / Autres fichiers à inclure :
 
     \input{Repetition/Repetition.tex}
-
     \input{VRC/VRC.tex}
-
     \input{LRC/LRC.tex}
-
     \input{CRC/CRC.tex}
-
 %    \input{Hamming/Hamming.tex}
 
-    \input{annexes.tex}
 
+    \input{annexes.tex}
 %    \listoffigures
 
 \end{document}

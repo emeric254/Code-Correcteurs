@@ -12,10 +12,10 @@ my $nbrErrD = 0; # nbr d'erreurs detectees
 do{
 my $carRec = P_recoitCar($link);
 
-# on test la paritée de cette reception (on test si la reception est valide) :
-   $nbrErrD+=1 unless (CRC::verification($carRec)); # la reception ne respecte pas la parité
+# on test la paritee de cette reception (on test si la reception est valide) :
+   $nbrErrD+=1 unless (CRC::verification($carRec)); # la reception ne respecte pas la parite
 
-# on test la validité de ce caractere recu :
+# on test la validite de ce caractere recu :
    $nbrErr+=1 if (CRC::decodage($carRec) ne 'o'); # le caractere n'est pas celui attendu
 
     $nbrRec += 1;

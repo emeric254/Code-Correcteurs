@@ -53,23 +53,24 @@ Pour notre message d'exemple (un simple caractère encodé en UTF-7) le rendemen
 
 
     \section{Exemple pratique}
-           \lstset{
-                language=bash, basicstyle=\ttfamily\small, columns=flexible,
-                tabsize=2, extendedchars=true, showspaces=false,
-                showstringspaces=false, numbers=left, numberstyle=\tiny,
-                breaklines=true, breakautoindent=true, captionpos=b
-            }
 
-    \begin{lstlisting}
+        \lstset{
+            language=bash, basicstyle=\ttfamily\small, columns=flexible,
+            tabsize=2, extendedchars=true, showspaces=false,
+            showstringspaces=false, numbers=left, numberstyle=\tiny,
+            breaklines=true, breakautoindent=true, captionpos=b
+        }
+
+        \begin{lstlisting}
 >> perl envoiNoise.pl 9001 127.0.0.1:9000
 
  -> envoi du caractere : o
 
  -> nombre de caracteres envoyes : 100000
 
-    \end{lstlisting}
+        \end{lstlisting}
 
-    \begin{lstlisting}
+        \begin{lstlisting}
 >> perl receptionNoise.pl 9000 127.0.0.1:9001
 
  -> nombre de receptions : 100000
@@ -81,4 +82,4 @@ Pour notre message d'exemple (un simple caractère encodé en UTF-7) le rendemen
  -> fiabilitee de l'envoi/reception : 43.079%
  -> fiabilitee de detection d'erreur : 73.2401047065231%
 
-    \end{lstlisting}
+        \end{lstlisting}
