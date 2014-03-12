@@ -8,14 +8,21 @@ use CRC;
 my $car = 'o';
 my $link = P_open(@ARGV);
 my $nbrEnv = 0;
-my $temp = codage($car); # on ne l'encode qu'une seule fois puisque ce caractere ne change pas
+my $check = CRC::codage($car); # on ne l'encode qu'une seule fois puisque ce caractere ne change pas
 
 print "\n -> envoi du caractere : ".$car." \n";
-
-while($nbrEnv<100000)
+print unpack "B16", $check;
+print "\n";
+print unpack "B8", $car;
+print "\n";
+my $temp = unpack "B8", $car;
+$temp = $temp . unpack "B16", $check;
+$temp = pack "B24", $temp;
+while($nbrEnv<10)
 {
-   P_envoiCar($link,$temp);
-   $nbrEnv+=1;
+    print $temp."\n";
+    P_envoiCar($link,$temp);
+    $nbrEnv+=1;
 }
 
 print "\n -> nombre de caracteres envoyes : ".$nbrEnv."\n\n";

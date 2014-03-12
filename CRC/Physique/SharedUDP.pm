@@ -95,7 +95,6 @@ sub P_envoiCar {
     defined $medium or die __PACKAGE__."::P_envoiCar: support fermé ou non défini\n";
 
     my($sock,$dest) = @$medium;
-    (defined $car and length $car == 1) or die __PACKAGE__ . "::P_envoiCar: \"$car\" n'est pas un caractere\n";
 
     # On envoie un caractère sur le socket d'émission
     $sock->send ($car,0,$dest) or die __PACKAGE__ . "::P_envoiCar: Erreur a l'emission de \"$car\" : $!\n";
@@ -120,7 +119,7 @@ sub P_recoitCar {
 
     # On attend un caractère sur le socket de réception
     debug("P_recoitCar","Looking for a frame on port ".$sock->sockport());
-    my $client = $sock->recv ($car, 1, 0);
+    my $client = $sock->recv ($car, 4, 0);
     debug_recv("P_recoitCar",$client,$sock,$car);
 
     # Retourne le premier caractère de la trame
@@ -151,7 +150,7 @@ sub P_recoitCarAsynchrone {
         debug_recv("P_recoitCarAsynchrone",$client,$sock,$car);
 
         # Retourne le premier caractère de la trame
-        return substr($car,0,1);
+        return $car;
     } else {
         debug_no_recv("P_recoitCarAsynchrone",$sock);
 

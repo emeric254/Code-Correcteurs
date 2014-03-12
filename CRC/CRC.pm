@@ -1,9 +1,9 @@
 use strict;
 use warnings;
-
 use Digest::CRC ;
 
 package CRC;
+
 
 #%.CRC::CRC
 #%* Fonction : calcule le CRC d'une valeur numérique.
@@ -18,29 +18,27 @@ package CRC;
 sub codage {
     @_ == 1 or die;
     my ($code) = @_;
-   
 
-	$code = crc16($code,$code);
-
-    return $code;
+    my ($crc) =  Digest::CRC::crc16($code);
+    return $crc;
 }
 
 
 sub verification {
-	my $temp = ord($_[0]);
-	return (crc16($temp)==0);	
+    my $temp = $_[0];
+    return (Digest::CRC::crc16($temp)==0);
 }
 
 
 sub decodage {
     @_ == 1 or die;
     my ($code) = @_;
- 
-
+    print $code."\n";
 # decalage a droite du degré du polynome
-   $code = ord($code) >> 16;
-   
+   $code = pack "B8", $code;
+   print $code."\n";
     return $code;
+
 }
 
 1;

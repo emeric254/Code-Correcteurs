@@ -11,15 +11,17 @@ my $nbrErrD = 0; # nbr d'erreurs detectees
 
 do{
 my $carRec = P_recoitCar($link);
-
+    print $carRec."\n";
+    $carRec = unpack "B24",$carRec;
+    print $carRec."\n";
 # on test la paritée de cette reception (on test si la reception est valide) :
-   $nbrErrD+=1 unless (verification($carRec)); # la reception ne respecte pas la parité
+   $nbrErrD+=1 unless (CRC::verification($carRec)); # la reception ne respecte pas la parité
 
 # on test la validité de ce caractere recu :
-   $nbrErr+=1 if (decodage($carRec) ne 'o'); # le caractere n'est pas celui attendu
+   $nbrErr+=1 if (CRC::decodage($carRec) ne 'o'); # le caractere n'est pas celui attendu
 
    $nbrRec += 1;
-}while ($nbrRec < 100000);
+}while ($nbrRec < 10);
 
 
 print "\n";

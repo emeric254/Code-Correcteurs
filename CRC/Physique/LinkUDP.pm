@@ -81,28 +81,27 @@ sub P_close {
 #%* Fonction : envoie un caractère sur un lien physique
 #%* Paramètre 1 : le lien physique
 #%* Paramètre 2 : le caractère à envoyer, sous la forme d'une chaîne de 1 caractère
-#%* Valeur de retour : faux indique une erreur détectée 
+#%* Valeur de retour : faux indique une erreur détectée
 #%* Exemple : ++P_envoiCar($link,"A");++
 #%
 sub P_envoiCar {
     @_ == 2 or die __PACKAGE__."::P_envoiCar: nombre de paramètres invalide (".@_.")\n";
     my($sock,$car) = @_;
     defined $sock or die __PACKAGE__."::P_envoiCar: lien non défini\n";
-    (defined $car and length $car == 1) or die __PACKAGE__ . "::P_envoiCar: \"$car\" n'est pas un caractere\n";
     my $car0 = $car;
 
     if (defined $Physique::Noise::FIABILITY) {
-	$car = Physique::Noise::transmettre($car);
+    $car = Physique::Noise::transmettre($car);
     }
     # On envoie un caractère sur le socket d'émission
     if($sock->send ($car,0)) {
-	debug("P_envoiCar","Character \"".$car.($car eq $car0?"":" (instead of $car0)")
-	      ."\" sent to ".$sock->peerhost().":".$sock->peerport());
-	return 1;
+    debug("P_envoiCar","Character \"".$car.($car eq $car0?"":" (instead of $car0)")
+          ."\" sent to ".$sock->peerhost().":".$sock->peerport());
+    return 1;
     } else {
-	my $err = $!;
-	debug("P_envoiCar","Failed to send character \"".$car0."\" to ".$sock->peerhost().":".$sock->peerport()." ($err)");
-	return 0;
+    my $err = $!;
+    debug("P_envoiCar","Failed to send character \"".$car0."\" to ".$sock->peerhost().":".$sock->peerport()." ($err)");
+    return 0;
     }
 }
 
@@ -121,11 +120,11 @@ sub P_recoitCar {
 
     # On attend un caractère sur le socket de réception
     debug("P_recoitCar","Looking for a frame on port ".$sock->sockport());
-    my $client = $sock->recv ($car, 1, 0);
+    my $client = $sock->recv ($car, 4, 0);
     debug_recv("P_recoitCar",$client,$sock,$car);
 
     # Retourne le premier caractère de la trame
-    return substr($car,0,1);
+    return $car;
 }
 
 #%.P_recoitCarAsynchrone
@@ -147,7 +146,7 @@ sub P_recoitCarAsynchrone {
     if ( $select->can_read(0.1) ){
 
         # De l'information est présente : on la lit
-        my $client = $sock->recv (my $car, 1, 0);
+        my $client = $sock->recv (my $car, 4, 0);
         debug_recv("P_recoitCarAsynchrone",$client,$sock,$car);
 
         # Retourne le premier caractère de la trame
