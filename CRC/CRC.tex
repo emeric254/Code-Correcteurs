@@ -47,3 +47,35 @@ Pour notre message d'exemple, un message de seulement 7 bit de longueur, un coda
         \paragraph{}
 Cependant avec un message de taille plus importante comme par exemple un message de 128 bit avec du CRC 16 le rendement devient excellent :
 \[  Rendement = \frac{128}{128 + 16} \approx 89\%  \]
+
+
+    \section{Exemple pratique}
+           \lstset{
+                language=bash, basicstyle=\ttfamily\small, columns=flexible,
+                tabsize=2, extendedchars=true, showspaces=false,
+                showstringspaces=false, numbers=left, numberstyle=\tiny,
+                breaklines=true, breakautoindent=true, captionpos=b
+            }
+
+    \begin{lstlisting}
+>> perl envoiNoise.pl 9001 127.0.0.1:9000
+
+ -> envoi du caractere : o
+
+ -> nombre de caracteres envoyes : 100000
+
+    \end{lstlisting}
+
+    \begin{lstlisting}
+>> perl receptionNoise.pl 9000 127.0.0.1:9001
+
+ -> nombre de receptions : 100000
+ -> nombre de receptions supposees bonnes : 7557
+ -> nombre de vrais bons caracteres : 7301
+ -> nombre d'erreurs au total : 92699
+ -> nombre d'erreurs detectees : 92443
+ -> nombre d'erreurs non detectees : 256
+ -> fiabilitee de l'envoi/reception : 7.301%
+ -> fiabilitee de detection d'erreur : 99.7238373660989%
+
+    \end{lstlisting}

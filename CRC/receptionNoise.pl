@@ -24,7 +24,7 @@ my $carRec = P_recoitCar($link);
 
 print "\n";
 print " -> nombre de receptions : ".$nbrRec."\n";
-print " -> nombre de receptions supposées bonnes : ".($nbrRec-$nbrErrD)."\n";
+print " -> nombre de receptions supposees bonnes : ".($nbrRec-$nbrErrD)."\n";
 print " -> nombre de vrais bons caracteres : ".($nbrRec-$nbrErr)."\n";
 print " -> nombre d'erreurs au total : ".$nbrErr."\n";
 print " -> nombre d'erreurs detectees : ".$nbrErrD."\n";
