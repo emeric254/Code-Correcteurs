@@ -12,7 +12,7 @@ my $temp = CRC::codage($car); # on ne l'encode qu'une seule fois puisque ce cara
 
 print "\n -> envoi du caractere : ".$car." \n";
 
-while($nbrEnv<50)
+while($nbrEnv<100000)
 {
     P_envoiCar($link,$temp);
     $nbrEnv+=1;

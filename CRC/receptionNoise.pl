@@ -11,8 +11,6 @@ my $nbrErrD = 0; # nbr d'erreurs detectees
 
 do{
 my $carRec = P_recoitCar($link);
-    print "\033[91m" if (CRC::decodage($carRec) eq 'o');
-    print "Recu : ".$carRec."\n";
 
 # on test la paritée de cette reception (on test si la reception est valide) :
    $nbrErrD+=1 unless (CRC::verification($carRec)); # la reception ne respecte pas la parité
@@ -21,8 +19,7 @@ my $carRec = P_recoitCar($link);
    $nbrErr+=1 if (CRC::decodage($carRec) ne 'o'); # le caractere n'est pas celui attendu
 
     $nbrRec += 1;
-    print "\033[0m" if (CRC::decodage($carRec) eq 'o');
-}while ($nbrRec < 50);
+}while ($nbrRec < 100000);
 
 
 print "\n";

@@ -20,7 +20,8 @@ sub transmettre {
     my $fiab_bit = ($FIABILITY/100);
     ($fiab_bit >= 0.1 && $fiab_bit <= 1) or die __PACKAGE__."::transmettre: $FIABILITY n'est pas une fiabilité valide\n";
 
-    foreach my $sh (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24) {
+    foreach my $sh (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)
+    { # pour chaque bit : 10% de chance d'être inverser donc le taux d'erreur est très élevé !
         if(rand(1) > $fiab_bit) {
             $car = $car ^ (1 << $sh);
         }
