@@ -4,10 +4,34 @@
 \usepackage[francais]{babel}
 \usepackage{xcolor,listings}
 
-\lstset{language=Perl}
-\lstset{commentstyle=\textit}
-\lstset{frame=shadowbox, rulesepcolor=\color{gray}}
+% paramétrage pour les zones de code perl
+\lstset{
+    language=Perl, commentstyle=\textit, frame=shadowbox,
+    rulesepcolor=\color{gray}, basicstyle=\ttfamily\small, columns=flexible,
+    tabsize=3, extendedchars=true, showspaces=false,
+    showstringspaces=false, numbers=left, numberstyle=\tiny,
+    breaklines=true, breakautoindent=true, captionpos=b, morecomment=[l]{//}
+}
 
+%language=Octave -> choose the language of the code
+%basicstyle=\footnotesize -> the size of the fonts used for the code
+%numbers=left -> where to put the line-numbers
+%numberstyle=\footnotesize -> size of the fonts used for the line-numbers
+%stepnumber=2 -> the step between two line-numbers.
+%numbersep=5pt -> how far the line-numbers are from the code
+%backgroundcolor=\color{white} -> sets background color (needs package)
+%showspaces=false -> show spaces adding particular underscores
+%showstringspaces=false -> underline spaces within strings
+%showtabs=false -> show tabs within strings through particular underscores
+%frame=single -> adds a frame around the code
+%tabsize=2 -> sets default tab-size to 2 spaces
+%captionpos=b -> sets the caption-position to bottom
+%breaklines=true -> sets automatic line breaking
+%breakatwhitespace=false -> automatic breaks happen at whitespace
+%morecomment=[l]{//} -> displays comments in italics (language dependent)
+
+
+% infos du document
 \title{Codes Correcteurs}
 \author{Julie Badets, Corentin Frade, Quentin Rouland, Émeric Tosi}
 \date{\today}
@@ -34,7 +58,7 @@ des problèmes de parasites se posent et l'indépendance des erreurs est comprom
         \paragraph{}
 Pour la suite nous prendrons comme exemple un message qui est un simple caractère encodé en UTF-7.
 Ce message a donc une taille de 7 bits.
-Cela facilite ainsi les calculs et l'implémentation pour les tests.
+Cela égalise ainsi les calculs et l'implémentation pour les tests.
     \end{abstract}
 
     \setcounter{tocdepth}{1} % définir la profondeur de l'Index
@@ -51,6 +75,6 @@ Cela facilite ainsi les calculs et l'implémentation pour les tests.
 
 
     \input{annexes.tex}
-%    \listoffigures
+%    \listoffigures % index des images du rapport
 
 \end{document}

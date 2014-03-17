@@ -7,7 +7,7 @@
 À partir de plusieurs message encodés grâce au VRC.
 Pour rester cohérent avec notre message d'exemple nous prendrons le cas d'une matrice carrée composée de 7 messages de taille 7 chacun.
 Il sera appliqué horizontalement à la matrice (à chaque message) le bit de parité.
-La matrice passera donc à une taille de 7 sur 8.
+La matrice passera donc à une taille de (7+1) sur 8.
 Le dernier message qui sera généré grâce à l'application du bit de parité verticalement sur la matrice.
 
 
@@ -15,15 +15,31 @@ Le dernier message qui sera généré grâce à l'application du bit de parité 
 
         \paragraph{}
 %cb erreur peut être corrigée. ?
+1 erreur peut être corrigée et jusqu’à trois erreurs peuvent être détectées à coup sûres.
 
 
     \section{Probabilité de détection}
 
         \paragraph{}
-%Probabilité de détecter une erreur :
-%\[  P(\text{Détection}) = P(\text{1 erreur}) \]
-%\[  P(\text{Détection}) = {n\choose k}p^k(1-p)^{n-k} \]
-%\[  P(\text{Détection}) \approx 74\% \text{ avec } P(\text{Erreur}) = 10\% \]
+Probabilité d'exactitude d'un message :
+\[  P(\text{Exact}) = P(\text{0 erreur}) + P(\text{1 erreur}) \]
+\[ \text{Taille de la matrice } n = ( \text{ Nombre de lignes } + 1 ) * ( \text{ Longeur du message } + \text{ Bit de parité } ) \]
+\[ P(\text{0 erreur}) + P(\text{1 erreur}) = (1-p)^{n} + {n\choose 1}*p*(1-p)^{n-1} \]
+Dans notre cas et avec les 10\% de chance qu'un bit soit changé :
+\[ \text{Taille de la matrice } n = 8*(7+1) = 8^{2} \]
+\[ \text{Taille de la matrice } n = 64 \]
+\[ P(\text{0 erreur}) + P(\text{1 erreur}) = (1-p)^{64} + 64*p*(1-p)^{63} \]
+\[ P(\text{0 erreur}) + P(\text{1 erreur}) = (1-0.1)^{64} + 64*0.1*(1-0.1)^{63} \]
+\[ P(\text{0 erreur}) + P(\text{1 erreur}) = (0.9)^{64} + 64*0.1*(0.9)^{63} \]
+\[ P(\text{0 erreur}) + P(\text{1 erreur}) \approx 0.1179\% \]
+Un message a donc environ 0.1179\% de chance d'être décodé correctement, c'est à dire non détecté faux.
+Le nombre de cas d'erreur où le LRC est mis à défaut est :
+\[  P(\text{Nombre d'indetections}) = (49+42+35+28+21+14+7)*7 \]
+le nombre de cas total est  :
+\[  P(\text{Nomber de cas}) = 2^{8*(7+1)} = 2^{8*8} \]
+\[  P(\text{Nombre de cas}) = 2^{64} \]
+\[  P(\text{Détection}) = \frac{P(\text{Nombre de cas}) - P(\text{Nombre d'indetections})}{P(\text{Nombre de cas})}*100 \]
+\[  P(\text{Détection}) \approx 100\% \]
 
 
     \section{Rendement}
