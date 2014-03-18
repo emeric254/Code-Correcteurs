@@ -40,8 +40,16 @@ le nombre de cas total est  :
 \[  P(\text{Nombre de cas}) = 2^{64} \]
 \[  P(\text{Détection}) = \frac{P(\text{Nombre de cas}) - P(\text{Nombre d'indetections})}{P(\text{Nombre de cas})}*100 \]
 \[  P(\text{Détection}) \approx 100\% \]
-
-
+Comparons la probabilité d'un message decodé à l'aide du LRC à celle de l'inforamtion non codé.
+l'information esr alors transmis directement avec la probabilité de transmission sans erreur.
+On a :
+\[  P(\text{n'}) = 7L=7*8=56 \]
+\[  P(\text{0}) = (1-p)^{n'}=\frac{9}{10} = 0.00273927\]
+Calculons alors l'amélioration :
+\[  P(\text{Amelioration}) = \frac{P(\text{Exact}) - P(\text{0})}{P(\text{0})} \]
+\[ =\frac{(\frac{9}{10})^{63}*(\frac{64}{10})-(\frac{9}{10})^{56}}{(\frac{9}{10})^{56}} \]
+\[ =(\frac{9}{10}^{7}*\frac{64}{10})-1 \approx 2.0611 \]
+On obtient donc une amélioration de 206,11\%.
     \section{Rendement}
 
         \paragraph{}
