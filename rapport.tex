@@ -3,6 +3,7 @@
 \usepackage{color,amsmath}
 \usepackage[francais]{babel}
 \usepackage{xcolor,listings}
+\usepackage{graphicx}
 
 % paramétrage pour les zones de code perl
 \lstset{
@@ -13,10 +14,10 @@
     breaklines=true, breakautoindent=true, captionpos=b, morecomment=[l]{//}
 }
 
-%language=Octave -> choose the language of the code
-%basicstyle=\footnotesize -> the size of the fonts used for the code
-%numbers=left -> where to put the line-numbers
-%numberstyle=\footnotesize -> size of the fonts used for the line-numbers
+%language=Octave %-> choose the language of the code
+%basicstyle=\footnotesize %-> the size of the fonts used for the code
+%numbers=left %-> where to put the line-numbers
+%numberstyle=\footnotesize %-> size of the fonts used for the line-numbers
 %stepnumber=2 -> the step between two line-numbers.
 %numbersep=5pt -> how far the line-numbers are from the code
 %backgroundcolor=\color{white} -> sets background color (needs package)
@@ -41,6 +42,18 @@
 
     \maketitle{} % Afficher la page de garde : Titre + Auteur(s) + Date de dernière compilation
 
+
+    \begin{figure}
+        \begin{center}
+            %\includegraphics{network.png}
+            %\includegraphics[height=128, width=128]{network.png}
+            \includegraphics[scale=0.5]{network.png}
+        \end{center}
+%            \caption{ Laule } % ce qui apparait juste en dessous de l'image
+%            \label{c'est styler !}
+    \end{figure}
+
+
     \begin{abstract} % Introduction // Résumé
         \paragraph{}
 Un code correcteur d'erreur est utilisé pour transmettre un message dans un canal bruité ;
@@ -60,18 +73,27 @@ Pour la suite nous prendrons comme exemple un message qui est un simple caractè
 Ce message a donc une taille de 7 bits.
 Cela égalise ainsi les calculs et l'implémentation pour les tests.
     \end{abstract}
+    \clearpage
+
 
     \setcounter{tocdepth}{1} % définir la profondeur de l'Index
     \renewcommand{\contentsname}{Sommaire} % renommer l'Index en Sommaire
     \tableofcontents{} % afficher l'Index
+    \clearpage
+
 
 % Differentes Parties / Chapitres / Autres fichiers à inclure :
 
     \input{Repetition/Repetition.tex}
+    \clearpage
     \input{VRC/VRC.tex}
+    \clearpage
     \input{LRC/LRC.tex}
+    \clearpage
     \input{CRC/CRC.tex}
+    \clearpage
 %    \input{Hamming/Hamming.tex}
+%    \clearpage
 
 
     \input{annexes.tex}
