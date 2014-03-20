@@ -16,10 +16,15 @@ Une seule erreur peut être détectée à coup sur.
     \section{Probabilité de détection}
 
         \paragraph{}
-%Probabilité de détecter une erreur :
-%\[  P(\text{Détection}) = P(\text{1 erreur}) \]
-%\[  P(\text{Détection}) = {n\choose k}p^k(1-p)^{n-k} \]
-%\[  P(\text{Détection}) \approx 74\% \text{ avec } P(\text{Erreur}) = 10\% \]
+Nombre d'erreurs qui ne sont pas détectées (par dénombrement):
+\[  \text{Nombre d'erreurs indétectables} = 123 \]
+Nombre de cas totaux :
+\[  \text{Nombre de cas} = 2^{(7*2)} \]
+Probabilité de détection :
+\[  P(\text{Détection}) = \frac{\text{Nombre de cas} - \text{Nombre d'erreurs indétectables}}{\text{Nombre de cas}}*100 \]
+On obtient alors :
+\[  P(\text{Détection}) = \frac{2^{(7*2)} - 123}{2^{(7*2)}} \]
+\[  P(\text{Détection}) \approx 99.25\% \]
 
 
     \section{Rendement}
