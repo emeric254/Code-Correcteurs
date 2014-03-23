@@ -14,13 +14,13 @@ On transmet simplement plusieurs fois le même message, on double les bits à tr
     \section{Fiabilité}
 
         \paragraph{}
-Une seule erreur peut être détectée à coup sur.
+Une seule erreur peut être détectée à coup sur. Les erreurs ne sont pas detectés dans les cas d'un nombre d'erreur pair se situant au même bits dans les deux messages envoyés.
 
 
     \section{Probabilité de détection}
 
         \paragraph{}
-Nombre d'erreurs qui ne sont pas détectées (par dénombrement):
+Nombre d'erreurs qui ne sont pas détectées (par dénombrement des cas d'indection cités précédement):
 \[  \text{Nombre d'erreurs indétectables} = 123 \]
 Nombre de cas totaux :
 \[  \text{Nombre de cas} = 2^{(7*2)} \]
