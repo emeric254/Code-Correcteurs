@@ -33,19 +33,19 @@ très faible et égale à : $2-(n-k)$
     \section{Probabilité de détection}
 
         \paragraph{}
-%        Solution: 1/2 r - 1
-\[  P(\text{Non Détection}) = 2-(n-k) \]
+Nous sommes finalement arrivé jusqu'a ces calculs et n'avons pas reussi à en comprendre les secrets et malices
         \paragraph{}
-\[  P(\text{Message Erroné}) = 24bits \& P(\text{Erreur}) \]
-        \paragraph{}
-\[  P(\text{Détection}) = 1 - P(\text{Non Détection}) = 1 - [2-(n-k)] \]
-\[ = 1 - 2 + n - k = n - k - 1\]
-        \paragraph{}
-\[  P(\text{Reconnaissance Erreur}) = \frac{P(\text{Détection})}{P(\text{Message Erroné})}\]
-        \paragraph{}
-Pour une probabilité de 10\% d'erreurs et utilisation du CRC 16:
+Dans notre cas :
 \[  \text{Polynôme CRC 16} = x^{16} + x^{15} + x^{2}+ 1 \]
-\[  P(\text{Non Détection}) = 2-(n-k) \]
+%\[  P(\text{Message Erroné}) = 24bits \& P(\text{Erreur}) \]
+%        \paragraph{}
+%\[  P(\text{Détection}) = 1 - P(\text{Non Détection}) = 1 - [2-(n-k)] \]
+%\[ = 1 - 2 + n - k = n - k - 1\]
+%        \paragraph{}
+%\[  P(\text{Reconnaissance Erreur}) = \frac{P(\text{Détection})}{P(\text{Message Erroné})}\]
+%        \paragraph{}
+%Pour une probabilité de 10\% d'erreurs et utilisation du CRC 16:
+%\[  P(\text{Non Détection}) = 2-(n-k) \]
 %\[  P(\text{Message Erroné}) = 24bits \& 10\% \]
 %\[  P(\text{Détection}) = 8*0.1(1-0.1)^7 + {8\choose 3}0.1^3(1-0.1)^5 + {8\choose 5}0.1^5(1-0.1)^3 + 8*0.1^7(1-0.1) \]
 %\[  P(\text{Détection}) = 0.8*0.9^7 + 56*0.1^3*0.9^5 + 56*0.1^5*0.9^3 + 8*0.1^7*0.9 \]
