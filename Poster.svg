@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Poster.svg">
+   sodipodi:docname="Poster.png">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -122,7 +122,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -225,7 +225,7 @@
        sodipodi:cy="813.79077"
        sodipodi:rx="121.42857"
        sodipodi:ry="112.85714"
-       d="m 779.99998,813.79077 a 121.42857,112.85714 0 1 1 -242.85714,0 121.42857,112.85714 0 1 1 242.85714,0 z"
+       d="m 779.99998,813.79077 c 0,62.32928 -54.36542,112.85714 -121.42857,112.85714 -67.06315,0 -121.42857,-50.52786 -121.42857,-112.85714 0,-62.32928 54.36542,-112.85714 121.42857,-112.85714 67.06315,0 121.42857,50.52786 121.42857,112.85714 z"
        transform="matrix(1.2239416,0,0,0.69638925,-97.14576,-246.61759)"
        style="fill:#ff8080" />
     <text
@@ -632,25 +632,25 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="1040"
-       y="263.79074"
+       x="1036"
+       y="251.79074"
        id="text3071"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3073"
-         x="1040"
-         y="263.79074">100%</tspan></text>
+         x="1036"
+         y="251.79074">100%</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="310.27066"
-       y="1041.2085"
+       x="304.27066"
+       y="1051.2085"
        id="text3071-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3073-2"
-         x="310.27066"
-         y="1041.2085">100%</tspan></text>
+         x="304.27066"
+         y="1051.2085">100%</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -675,8 +675,8 @@
          x="523.57312"
          y="-1187.5364">détection</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.98410994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 347.06352,989.35427 799.01578,6.0158 z"
+       style="fill:none;stroke:#000000;stroke-width:0.9927243px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 331.84378,989.35858 814.23122,6.00718 z"
        id="path3115-0"
        inkscape:connector-curvature="0" />
     <text
@@ -735,5 +735,27 @@
          id="tspan3278"
          x="545.64081"
          y="433.24323">code polynômial</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-681.90576"
+       y="341.12692"
+       id="text3100-0"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3102-1"
+         x="-681.90576"
+         y="341.12692">complexité</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 274.22681,270.12982 32.3511,-36.15711 30.44809,34.2541 z"
+       id="path3114"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1138.9489,267.37231 32.3511,-36.15711 30.4481,34.2541 z"
+       id="path3114-5"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

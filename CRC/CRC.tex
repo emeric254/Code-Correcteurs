@@ -67,6 +67,37 @@ Cependant avec un message de taille plus importante comme par exemple un message
 \[  Rendement = \frac{128}{128 + 16} \approx 89\%  \]
 
 
+    \section{Exemple de calcul}
+        \paragraph{Codage}
+Prenons comme exemple un message à envoyer de valeur binaire $ 0011001 $
+et avec le polynôme $ \text{CRC 16} = 1100000000000101 $.
+On décale le message de 16 bits vers la gauche $ 00110010000000000000000 $.
+Ensuite on calcul la somme de contrôle (checksum) de ce message
+\[ 00110010000000000000000 | 1100000000000101 \]
+\[ xor 110000000000010100000 \]
+\[ = 000010000000010100000 | 1100000000000101 \]
+\[ xor 11000000000001010 \]
+\[ = 01000000010101010 | 1100000000000101 \]
+\[ xor 1100000000000101 \]
+\[ = 0100000010101111 \]
+La somme de contrôle est donc :
+\[ 0100000010101111 \]
+On concatène cela au message originale à envoyer pour obtenir le message a envoyer :
+\[ 00110010100000010101111 \]
+        \paragraph{Décodage}
+On recois un message de valeur binaire $ 00110010100000010101111 $
+et avec le polynôme $ \text{CRC 16} = 1100000000000101 $.
+On divise alors ce message par le polynôme pour le vérifier
+\[ 00110010100000010101111 | 1100000000000101 \]
+\[ xor 110000000000010100000 \]
+\[ = 000010100000000001111 | 1100000000000101 \]
+\[ xor 11000000000001010 \]
+\[ = 01100000000000101 | 1100000000000101 \]
+\[ xor 1100000000000101 \]
+\[ = 0000000000000000 \]
+On s'apercoit que le résultat est nul, aucune erreur n'a été détectée.
+On récupère le message en décalant ce que l'on a reçu de 16 bits à droite $ 0011001 $
+
     \section{Exemple pratique}
            \lstset{
                 language=bash, basicstyle=\ttfamily\small, columns=flexible,
