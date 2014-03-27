@@ -14,10 +14,10 @@ Il est donc à 0 pour un nombre pair de bit à 1 dans le message de départ, ou 
 
         \paragraph{}
 Une seule erreur peut être détectée à coup sur.
-Toutes les erreurs où un nombre pair de bits sont modifiés ne sont pas détectées,
-les erreurs détectées sont donc celles où un nombre impair de bits ont changé d'état.
+Toutes les erreurs où un nombre pair de bits a été modifié ne sont pas détectées,
+les erreurs détectées sont donc celles où un nombre impair de bits a changé d'état.
 Si une seule erreur intervient mais porte sur le bit de parité, le message est considéré comme invalide.
-Ce code ne permet pas la correction d'erreur, il est nécessaire de redemander l'envoi du message détecté invalide.
+Ce code ne permet pas la correction d'erreur, il est nécessaire de demander à nouveau l'envoi du message détecté invalide.
 
 
     \section{Probabilité de détection}
