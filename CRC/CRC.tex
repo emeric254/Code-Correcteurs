@@ -16,6 +16,8 @@ Le récepteur divise ce qu'il a reçut, retrouve le message et sait si il y a eu
 Il existe plusieurs variantes du CRC selon le choix du polynôme : CRC 12, CRC 16, CRC CCIT v41, CRC 32, CRC ARPA.
 
 
+    \clearpage
+
     \section{Fiabilité}
 
         \paragraph{}
@@ -23,10 +25,10 @@ Deux erreurs peuvent être détectées à coup sur grâce au CRC 16.
 Les erreurs détectées sont seulement celles où un nombre impairs de bit ont changé d'état ou
 celles qui sont des suites de bit qui ont tous changés (rafales), de taille inférieur au
 degré du polynôme.
-Un code polynomial C(k, n) permet de détecter toutes les
+\\Un code polynomial C(k, n) permet de détecter toutes les
 erreurs d’ordre $l \leq n-k$ (c’est-à-dire inférieur au degré du
 polynôme générateur).
-Et la probabilité de ne pas détecter les erreurs d’ordre $l>n-k$ est
+La probabilité de ne pas détecter les erreurs d’ordre $l>n-k$ est
 très faible et égale à : $2-(n-k)$
 
 
@@ -71,7 +73,7 @@ Cependant avec un message de taille plus importante comme par exemple un message
         \paragraph{Codage}
 Prenons comme exemple un message à envoyer de valeur binaire $ 0011001 $
 et avec le polynôme $ \text{CRC 16} = 1100000000000101 $.
-On décale le message de 16 bits vers la gauche $ 00110010000000000000000 $.
+\\On décale le message de 16 bits vers la gauche $ 00110010000000000000000 $.
 Ensuite on calcul la somme de contrôle (checksum) de ce message
 \[ 00110010000000000000000 | 1100000000000101 \]
 \[ xor 110000000000010100000 \]
@@ -82,7 +84,7 @@ Ensuite on calcul la somme de contrôle (checksum) de ce message
 \[ = 0100000010101111 \]
 La somme de contrôle est donc :
 \[ 0100000010101111 \]
-On concatène cela au message originale à envoyer pour obtenir le message a envoyer :
+On concatène cela au message originale à envoyer pour obtenir le message à envoyer :
 \[ 00110010100000010101111 \]
         \paragraph{Décodage}
 On recois un message de valeur binaire $ 00110010100000010101111 $
@@ -96,7 +98,7 @@ On divise alors ce message par le polynôme pour le vérifier
 \[ xor 1100000000000101 \]
 \[ = 0000000000000000 \]
 On s'apercoit que le résultat est nul, aucune erreur n'a été détectée.
-On récupère le message en décalant ce que l'on a reçu de 16 bits à droite $ 0011001 $
+\\On récupère le message en décalant ce que l'on a reçu de 16 bits à droite $ 0011001 $
 
     \section{Exemple pratique}
            \lstset{
