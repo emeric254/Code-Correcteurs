@@ -9,7 +9,7 @@
 
 package Physique::Noise;
 
-our $FIABILITY = 90; # 10% d'erreur
+our $FIABILITY = 100; # 10% d'erreur
 
 sub transmettre {
     @_ == 1 or die __PACKAGE__."::transmettre: nombre de paramètres invalide\n";
