@@ -94,18 +94,35 @@ Cela égalise ainsi les calculs et l'implémentation pour les tests.
 
     \section{Conclusion}
         \paragraph{}
-Nous avons vu au cours de ce dossier differents code correcteurs utiles dans de nombreux domaines utilisant des transmissions de données.
-Il existe un grand nombre de méthodes afin de verifier la validité d'un message à son arrivée.
-Nous avons donc dut selectionner les premiers codes correcteurs les moins complexes afin qu'ils soient abordables pour nous.
-Il est apparut que certains codes simples offraient une très bonne détection aux erreurs mais offraient des rendements très mauvais ce qui posent des problème dans des cas de transmission massive de données.
-Et inversement des codes plus evolué offrent des rendements très mauvais pour des petites transmissions de donnée.
-Il faut donc prendre tout ces paramètres en compte afin de choisir le type de methode detection d'erreur a utiliser dans chaque cas particulier.
-Sur les methodes que nous avons etudiés il n'existe pas de code parfait.
+Nous avons vu au cours de ce dossier différents codes correcteurs utiles dans de nombreux domaines utilisant des transmissions de données.
+Il existe un grand nombre de méthodes afin de vérifier la validité d'un message à son arrivée.
+Nous avons donc selectionner les codes correcteurs les moins complexes afin qu'ils soient abordables pour nous.
+Il est apparut que certains codes simples offraient une très bonne détection aux erreurs mais offraient des rendements très mauvais ce qui posent des problèmes dans des cas de transmission massive de données.
+Et inversement des codes plus evolués offrent des rendements très mauvais pour des petites transmissions de donnée.
+Il faut donc prendre tout ces paramètres en compte afin de choisir le type de méthode detection d'erreur à utiliser dans chaque cas particulier.
+Sur les méthodes que nous avons etudiées il n'existe pas de code parfait.
 Mais nous avons bien évidemment traité qu'une partie infine du sujet,
-des codes plus puissants et complexes existent tel que Reed-Solomon.
+des codes plus puissants et complexes existent tel que Reed-Solomon par exemple.
     \clearpage
 
     \begin{abstract} % Résumé
+Différents codes ont été abordées, les moins complexes, jusqu'aux codes polynomiaux.
+Le code de Répétition étant une simple transmission de $n$ fois le message sont rendement est relativement mauvais et il est très sensible aux erreurs  aléatoires régulieres.
+Le code de Parité est un code qui se sert de la représentation binaire du message pour y ajouter un bit à la fin pour assurer la parité du nombre de bit de poids fort.
+Il est aussi peu performant, mais cependant très peu couteux en taille puisque occupe qu'un seul bit, son rendement est excellent.
+Le code de Parité croisé est une amélioration du code de parité grâce à une utisation par bloc de celui-ci. On utilise une matrice de $n$ message précédemment codés et on en calcul verticalement la parité pour créer un message que l'on ajoute comme dernière ligne de cette matrice.
+Ce code permet de corriger une erreur.
+Le code de Redondance Cyclique est le plus complexe abordé : il se base sur un polynome diviseur pour générer une somme de contrôle ajoutée en fin de message.
+Il est presenté dans ce dossier le rendement, la fiabilité et un exemple pratique d'implémentation pour ces codes précédents.
+    \end{abstract}
+    \clearpage
+
+    \begin{abstract} % Résumé
+It show off some codes into this report, which are the less complex ones, until the polynomial encoding.
+Repetion code is a simple $n$ time repetitions of the message. Its yield is really poor and this code is very subject to regular random errors.
+Parity code, Vertical Redundancy Check, use binary representation of the message. A parity bit is generated to ensure parity of significant bit number, and it's added at the end of the message.
+This one is also weak, but it doesn't use more than only one bit in the message, so its yield is awesome.
+
     \end{abstract}
     \clearpage
 
