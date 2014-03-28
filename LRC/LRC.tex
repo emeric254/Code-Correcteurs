@@ -1,10 +1,12 @@
 
-\chapter{LRC :Contrôle parité croisée}
+\chapter{LRC : Contrôle parité croisée}
 
     \section{Introduction}
 
         \paragraph{}
-À partir de plusieurs message encodés grâce au VRC.
+Le LRC (Longitudinal Redundancy Check) est un mot d'information se composant $L$ caractere de texte.
+Il s'agit d'un double codage par bits de parité. Les 7 $L$ bits sont rangés dans un tableau de $L$ lignes et 7 colonnes.
+Chaque ligne est complété par un bit de parité et de même pour les 8 colonnes formés.
         \paragraph{}
 Pour rester cohérent avec notre message d'exemple nous prendrons le cas d'une matrice carrée composée de 7 messages de taille 7 chacun.
 Il sera appliqué horizontalement à la matrice (à chaque message) le bit de parité.

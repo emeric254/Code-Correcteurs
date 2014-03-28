@@ -59,7 +59,8 @@
 
 % Differentes Parties / Chapitres / Autres fichiers à inclure :
 
-    \section{Introduction}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Introduction}
         \paragraph{}
 Un code correcteur est utilisé pour transmettre un message dans un canal bruité.
 Il permet de reconstituer le message émis même si des erreurs (en nombre limité), ont altéré le message.
@@ -92,7 +93,8 @@ Cela égalise ainsi les calculs et l'implémentation pour les tests.
     \input{CRC/CRC.tex}
     \clearpage
 
-    \section{Conclusion}
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
         \paragraph{}
 Nous avons vu au cours de ce dossier différents codes correcteurs utiles dans de nombreux domaines utilisant des transmissions de données.
 Il existe un grand nombre de méthodes afin de vérifier la validité d'un message à son arrivée.
@@ -105,7 +107,9 @@ Mais nous avons bien évidemment traité qu'une partie infine du sujet,
 des codes plus puissants et complexes existent tel que Reed-Solomon par exemple.
     \clearpage
 
-    \begin{abstract} % Résumé
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+\paragraph{}
 Différents codes ont été abordées, les moins complexes, jusqu'aux codes polynomiaux.
 Le code de Répétition étant une simple transmission de $n$ fois le message sont rendement est relativement mauvais et il est très sensible aux erreurs  aléatoires régulieres.
 Le code de Parité est un code qui se sert de la représentation binaire du message pour y ajouter un bit à la fin pour assurer la parité du nombre de bit de poids fort.
@@ -114,16 +118,19 @@ Le code de Parité croisé est une amélioration du code de parité grâce à un
 Ce code permet de corriger une erreur.
 Le code de Redondance Cyclique est le plus complexe abordé : il se base sur un polynome diviseur pour générer une somme de contrôle ajoutée en fin de message.
 Il est presenté dans ce dossier le rendement, la fiabilité et un exemple pratique d'implémentation pour ces codes précédents.
-    \end{abstract}
     \clearpage
 
-    \begin{abstract} % Résumé
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\paragraph{}
 It show off some codes into this report, which are the less complex ones, until the polynomial encoding.
 Repetion code is a simple $n$ time repetitions of the message. Its yield is really poor and this code is very subject to regular random errors.
 Parity code, Vertical Redundancy Check, use binary representation of the message. A parity bit is generated to ensure parity of significant bit number, and it's added at the end of the message.
 This one is also weak, but it doesn't use more than only one bit in the message, so its yield is awesome.
-
-    \end{abstract}
+The Longitudinal Redundancy Check code is an evolution of the previous VRC. Its use some message encoded by the VRC to create a matrix. A new message with parity of vertical reading of the matrix is formed and it's append to this last.
+This code can resolve one error.
+Cyclic Redondance Check is the most complex dealt code: it's based on polynomial division of the message to find a checksum which will be append to this message before sending it.
+Dealt codes are them yield, fiability and an implementation example showed.
     \clearpage
 
     \input{annexes.tex}
