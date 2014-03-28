@@ -44,3 +44,36 @@ Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) e
 \[  Rendement = \frac{7}{7*2} = 50\% \]
 Pour le même message mais avec 2 répétitions :
 \[  Rendement = \frac{7}{7*3} \approx 33.3\% \]
+
+    \section{Exemple pratique}
+
+        \lstset{
+            language=bash, basicstyle=\ttfamily\small, columns=flexible,
+            tabsize=2, extendedchars=true, showspaces=false,
+            showstringspaces=false, numbers=left, numberstyle=\tiny,
+            breaklines=true, breakautoindent=true, captionpos=b
+        }
+Voir détail du code en annexe.
+        \begin{lstlisting}
+>> perl envoiNoise.pl 8000 127.0.0.1:9000
+
+ -> envoi du caractere : o 
+ 
+ -> nombre de caracteres envoyes : 100000
+
+        \end{lstlisting}
+
+        \begin{lstlisting}
+
+>> perl receptionNoise.pl 9000 127.0.0.1:8000
+
+ -> nombre de receptions : 100000
+ -> nombre de receptions supposees bonnes : 18867
+ -> nombre de vrais bons caracteres : 18255
+ -> nombre d'erreurs au total : 81745
+ -> nombre d'erreurs detectees : 81133
+ -> nombre d'erreurs non detectees : 612
+ -> fiabilitee de l'envoi/reception : 18.255%
+ -> fiabilitee de detection d'erreur : 99.2513303565967%
+ 
+        \end{lstlisting}
