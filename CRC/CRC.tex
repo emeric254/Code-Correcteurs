@@ -7,7 +7,7 @@
 le CRC (Cyclic Redundancy Check), contrôle de redondance cyclique,
 représente la principale méthode de détection d'erreurs utilisée dans les télécommunications et
 consiste à protéger des blocs de données, appelés trames.
-À chaque trame est associé un bloc de données, appelé code de contrôle (parfois CRC par abus de langage).
+À chaque trame est associé un bloc de données, appelé code ou somme de contrôle (parfois CRC par abus de langage).
         \paragraph{}
 On choisit un polynôme générateur, fixé et donc connu des deux entités qui se transmettent le message.
 Grâce à celui ci, l'émetteur peut générer le code de contrôle qui est le reste de la division avec le message à envoyer.
@@ -25,7 +25,7 @@ Deux erreurs peuvent être détectées à coup sur grâce au CRC 16.
 Les erreurs détectées sont seulement celles où un nombre impairs de bit ont changé d'état ou
 celles qui sont des suites de bit qui ont tous changés (rafales), de taille inférieur au
 degré du polynôme.
-\\Un code polynomial C(k, n) permet de détecter toutes les
+\\Un code polynomial $C(k, n)$ permet de détecter toutes les
 erreurs d’ordre $l \leq n-k$ (c’est-à-dire inférieur au degré du
 polynôme générateur).
 La probabilité de ne pas détecter les erreurs d’ordre $l>n-k$ est
@@ -35,7 +35,7 @@ très faible et égale à : $2-(n-k)$
     \section{Probabilité de détection}
 
         \paragraph{}
-Nous sommes finalement arrivé jusqu'a ces calculs et n'avons pas reussi à en comprendre les secrets et malices
+Nous sommes finalement arrivé jusqu'à ces calculs et n'avons pas reussi à en comprendre tout les secrets et malices
         \paragraph{}
 Dans notre cas :
 \[  \text{Polynôme CRC 16} = x^{16} + x^{15} + x^{2}+ 1 \]
