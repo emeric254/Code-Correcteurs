@@ -45,6 +45,8 @@ Pour un message sur 7 bits (un simple caractère encodé en UTF-7 par exemple) e
 Pour le même message mais avec 2 répétitions :
 \[  Rendement = \frac{7}{7*3} \approx 33.3\% \]
 
+
+    \clearpage
     \section{Exemple pratique}
 
         \lstset{
@@ -57,8 +59,8 @@ Voir détail du code en annexe.
         \begin{lstlisting}
 >> perl envoiNoise.pl 8000 127.0.0.1:9000
 
- -> envoi du caractere : o 
- 
+ -> envoi du caractere : o
+
  -> nombre de caracteres envoyes : 100000
 
         \end{lstlisting}
@@ -75,5 +77,5 @@ Voir détail du code en annexe.
  -> nombre d'erreurs non detectees : 612
  -> fiabilitee de l'envoi/reception : 18.255%
  -> fiabilitee de detection d'erreur : 99.2513303565967%
- 
+
         \end{lstlisting}
