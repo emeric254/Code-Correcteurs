@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Poster.png">
+   sodipodi:docname="Poster.svg">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -122,7 +122,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -143,7 +143,7 @@
            x="211.42857"
            y="51.046104" /></flowRegion><flowPara
          id="flowPara2991"
-         style="font-size:64px;text-align:center;text-anchor:middle">Code Correcteurs</flowPara></flowRoot>    <path
+         style="font-size:64px;text-align:center;text-anchor:middle">Codes Correcteurs</flowPara></flowRoot>    <path
        sodipodi:type="star"
        id="path3012"
        sodipodi:sides="5"
@@ -643,14 +643,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="304.27066"
-       y="1051.2085"
+       x="308.27066"
+       y="1037.2085"
        id="text3071-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3073-2"
-         x="304.27066"
-         y="1051.2085">100%</tspan></text>
+         x="308.27066"
+         y="1037.2085">100%</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -718,7 +718,7 @@
          x="897.56671"
          y="730.66229"
          id="tspan3272"
-         style="text-align:center;text-anchor:middle">avec parité verical </tspan><tspan
+         style="text-align:center;text-anchor:middle">avec parité verticale </tspan><tspan
          sodipodi:role="line"
          x="891.19952"
          y="780.66229"
